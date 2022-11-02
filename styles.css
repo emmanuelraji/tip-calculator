@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+
+/* GENERAL STYLES */
+
+:root {
+    --dark-cyan: hsl(183, 100%, 15%);
+    --strong-cyan: hsl(172, 67%, 45%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --cyan: hsl(184, 14%, 56%);
+    --lighter-grayish-cyan: hsl(185, 41%, 84%);
+    --light-grayish-cyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+    --light-gray: #f3f8fb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space-Mono', monospace;
+    background-color: var(--lighter-grayish-cyan);
+    color: #657d7b;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+input {
+    text-align: right;
+    border: none;
+    background-color: transparent;
+    color: var(--dark-cyan);
+    font-size: 24px;
+    font-weight: 700;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+}
+
+span {
+    font-size: 1.2rem;
+    display: block;
+}
+
+/* MAIN CONTENT */
+
+main {
+    max-width: 350px;
+}
+
+.heading {
+    color: var(--dark-cyan);
+    text-align: center;
+    margin: 20px 0;
+}
+
+.heading span {
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.container {
+    background-color: var(--white);
+    min-height: calc(100vh - 69px);
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.bill-amount, .people {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--light-gray);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.bill-input {
+}
+
+.tip-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.grid-item {
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 10px 15px;
+    color: var(--white);
+    background-color: var(--dark-cyan);
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom {
+    background-color: var(--light-gray);
+    color: #657d7b;
+}
+
+.output {
+    background-color: var(--dark-cyan);
+    border-radius: 5px;
+    padding: 30px 15px 20px 15px;
+}
+
+.tip-amount-block, .total-amount-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#reset {
+    background-color: var(--strong-cyan);
+    border: none;
+    padding: 1em 0;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (min-width: 375px) {
+    body {
+        /*background-color: chocolate;*/
+    }
+}
