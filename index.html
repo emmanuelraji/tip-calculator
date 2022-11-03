@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="styles.css">
-  <title>Title</title>
+  <title>Tip Calculator</title>
 </head>
 <body>
   <main>
@@ -13,9 +13,9 @@
     </header>
     <div class="container">
       <span style="margin-bottom: 20px">Bill</span>
-      <div class="bill-amount">
+      <div class="bill-amount" id="bill-amount-div">
         <span>$</span>
-        <input class="bill-input" input="text" placeholder="0"/>
+        <input class="bill-input" id="bill-amount" placeholder="0"/>
       </div>
       <span style="margin-bottom: 20px">Select Tip %</span>
       <div class="tip-grid">
@@ -24,12 +24,12 @@
         <div class="grid-item">15%</div>
         <div class="grid-item">20%</div>
         <div class="grid-item">25%</div>
-        <div class="grid-item custom">Custom</div>
+        <input class="grid-item custom" id="custom" placeholder="Custom" />
       </div>
       <span style="margin-bottom: 20px">Number of People</span>
       <div class="people">
         <span>$</span>
-        <input class="bill-input" input="text" placeholder="0"/>
+        <input class="bill-input" id="number-of-people" placeholder="0"/>
       </div>
       <div class="output">
         <div class="tip-amount-block">
@@ -37,18 +37,19 @@
             <span>Tip Amount</span>
             <span>/ person</span>
           </div>
-          <span>$0.00</span>
+          <span class="total" id="tip-total">$0.00</span>
         </div>
         <div class="total-amount-block">
           <div class="total-amount">
-            <span>Tip Amount</span>
+            <span>Total</span>
             <span>/ person</span>
           </div>
-          <span>$0.00</span>
+          <span class="total" id="people-total">$0.00</span>
         </div>
-        <button id="reset">Reset</button>
+        <button id="reset" disabled>Reset</button>
       </div>
     </div>
   </main>
+  <script src="main.js"></script>
 </body>
 </html>
