@@ -1,13 +1,27 @@
+// SELECTORS
+
 const billAmount = document.querySelector('#bill-amount')
 const billAmountDiv = document.querySelector('#bill-amount-div')
 const numOfPeople = document.querySelector('#number-of-people')
+const peopleAmountDiv = document.querySelector('#people-amount-div')
+const peopleError = document.querySelector('#people-error')
 const tipTotal = document.querySelector('#tip-total')
 const peopleTotal = document.querySelector('#people-total')
+const buttons = document.querySelectorAll(".grid-button")
 
-let bill = 0
-let people = 0
 
-const name = "43"
+buttons.forEach((button, key) => {
+  button.addEventListener("click", () => {
+    button.classList.toggle("active")
+    buttons.forEach((element, id) => {
+      if (id !== key) {
+        element.classList.remove("active")
+      }
+    })
+  })
+})
+
+// EVENT LISTENERS
 
 billAmount.addEventListener("focus", () => {
   billAmountDiv.classList.add("blue-highlight")
@@ -15,16 +29,27 @@ billAmount.addEventListener("focus", () => {
 
 billAmount.addEventListener("blur", () => {
   billAmountDiv.classList.remove("blue-highlight")
-  console.log(billAmount)
-  if (!isNaN(parseInt(name))) {
-    bill = billAmount.value
-  } else {
-  
+})
+
+numOfPeople.addEventListener("focus", () => {
+  peopleAmountDiv.classList.remove("orange-highlight")
+  peopleError.style.display = "none"
+  peopleAmountDiv.classList.add("blue-highlight")
+})
+
+numOfPeople.addEventListener("blur", () => {
+  peopleAmountDiv.classList.remove("blue-highlight")
+  const numPeople = parseInt(numOfPeople.value)
+  if (numPeople === 0) {
+    peopleAmountDiv.classList.add("orange-highlight")
+    peopleError.style.display = "block"
   }
 })
 
-function calculateTip() {
+// FUNCTIONS
 
+function calculateTip() {
+  //isNaN
 }
 
 function totalPerPerson() {

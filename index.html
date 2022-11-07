@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="styles.css">
   <title>Tip Calculator</title>
 </head>
@@ -12,41 +13,50 @@
       <span>tter</span>
     </header>
     <div class="container">
-      <span style="margin-bottom: 20px">Bill</span>
-      <div class="bill-amount" id="bill-amount-div">
-        <span>$</span>
-        <input class="bill-input" id="bill-amount" placeholder="0"/>
-      </div>
-      <span style="margin-bottom: 20px">Select Tip %</span>
-      <div class="tip-grid">
-        <div class="grid-item">5%</div>
-        <div class="grid-item">10%</div>
-        <div class="grid-item">15%</div>
-        <div class="grid-item">20%</div>
-        <div class="grid-item">25%</div>
-        <input class="grid-item custom" id="custom" placeholder="Custom" />
-      </div>
-      <span style="margin-bottom: 20px">Number of People</span>
-      <div class="people">
-        <span>$</span>
-        <input class="bill-input" id="number-of-people" placeholder="0"/>
+      <div class="input">
+        <span style="margin-bottom: 8px">Bill</span>
+        <div class="bill-amount" id="bill-amount-div">
+          <span>$</span>
+          <input class="bill-input" id="bill-amount" placeholder="0"/>
+        </div>
+        <span style="margin-bottom: 15px">Select Tip %</span>
+        <div class="tip-grid">
+          <button class="grid-button">5%</button>
+          <button class="grid-button">10%</button>
+          <button class="grid-button">15%</button>
+          <button class="grid-button">20%</button>
+          <button class="grid-button">25%</button>
+          <input class="grid-item custom" id="custom" placeholder="Custom"/>
+        </div>
+        <div class="people-number-block">
+          <span>Number of People</span>
+          <span id="people-error" style="display: none">Can't be zero</span>
+        </div>
+        <div class="people" id="people-amount-div">
+          <span>$</span>
+          <input class="bill-input" id="number-of-people" placeholder="0"/>
+        </div>
       </div>
       <div class="output">
-        <div class="tip-amount-block">
-          <div class="tip-amount">
-            <span>Tip Amount</span>
-            <span>/ person</span>
+        <div class="output-block">
+          <div>
+            <div class="tip-amount-block">
+              <div class="tip-amount">
+                <span class="output-title">Tip Amount</span>
+                <span>/ person</span>
+              </div>
+              <span class="total" id="tip-total">$0.00</span>
+            </div>
+            <div class="total-amount-block">
+              <div class="total-amount">
+                <span class="output-title">Total</span>
+                <span>/ person</span>
+              </div>
+              <span class="total" id="people-total">$0.00</span>
+            </div>
           </div>
-          <span class="total" id="tip-total">$0.00</span>
+          <button id="reset" disabled>Reset</button>
         </div>
-        <div class="total-amount-block">
-          <div class="total-amount">
-            <span>Total</span>
-            <span>/ person</span>
-          </div>
-          <span class="total" id="people-total">$0.00</span>
-        </div>
-        <button id="reset" disabled>Reset</button>
       </div>
     </div>
   </main>
